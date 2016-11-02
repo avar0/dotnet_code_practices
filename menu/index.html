@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>
+         Menu practice
+      </title>
+      <link rel="stylesheet" type="text/css" href="site.css" /> 
+      <script type="text/javascript" src="site.js"> </script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   </head>
+   <body>
+      <!--Floating menu-->
+      <div id="search-engine-selection-menu" class="floating-menu-window">
+         <div id="search-engine-menu-title" class="floatin-menu-title">
+         </div>
+         <div>
+            <ul id="menu-options-container" class="menu-container">
+               <li class="menu-option" data-isselected="false" value="1">
+                  <span class="menu-option-image">
+                     <!--image-->
+                     <img src="img/img1.png" alt="image1" />
+                  </span>
+                  <span class ="menu-option-description">
+                     Image 1
+                  </span>
+                  <span class= "menu-option-selected-mark">
+                     <img src="img/check_mark.png" alt="check" />
+                  </span>
+               </li>
+               <li class="menu-option" data-isselected="false" value="2">
+                  <span class="menu-option-image">
+                     <img src="img/img2.png" alt="image1" />
+                  </span>
+                  <span class ="menu-option-description">
+                     Image 2
+                  </span>
+                  <span class= "menu-option-selected-mark">
+                     <img src="img/check_mark.png" alt="check" />
+                  </span>
+               </li>
+               <li class="menu-option" data-isselected="false" value="3">
+                  <span class="menu-option-image">
+                     <img src="img/img3.png" alt="image1" />
+                  </span>
+                  <span class ="menu-option-description">
+                     Image 3
+                  </span>
+                  <span class= "menu-option-selected-mark">
+                     <img src="img/check_mark.png" alt="check" />
+                  </span>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </body>
+</html>
+
+<script>
+   $(function(){
+      Integration(".menu-option", "#search-engine-menu-title", ".menu-option-selected-mark", "data-isselected");
+   });
+</script>

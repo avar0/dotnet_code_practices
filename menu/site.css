@@ -1,0 +1,29 @@
+.menu-option{
+   background:white;
+   height: 40px;
+   width: 150px;
+}
+
+.menu-option:hover{
+   background-color:lightblue;
+}
+
+.menu-option-image{
+   margin: 5px 5px 3px 3px;
+   padding:8px 3px 3px 3px;
+   border: 1px solid black;
+}
+
+.menu-option-selected-mark{
+   display: none;
+}
+
+#search-engine-selection-menu{
+   width:400;
+   height: 300;
+   float: left;
+}
+
+#menu-options-container{
+   list-style-type: none;
+}
