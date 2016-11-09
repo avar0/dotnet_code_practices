@@ -1,3 +1,16 @@
 <template>
-   <h1${message}></h1>
+   <require from = "./components/predicate.html"></require>
+   <h1>
+      ${message}
+   </h1>
+   <h2>
+      ${header}
+   </h2>
+   <h3>
+      ${content}
+   </h3>
+   <button click.delegate = "updateContent()"> Update Content </button>
+   <predicate id="something" class="class1"></predicate>
+   <predicate id="something-else" class="class2"></predicate>
+   <predicate id="something-else-2"></predicate>
 </template>
