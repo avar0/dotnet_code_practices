@@ -1,0 +1,8 @@
+<template>
+   <div repeat.for= "filter in filters">
+      <compose 
+         view-model="filter-value" 
+         model.bind="filter.value"
+         view="getElementView($index)"></compose>
+   </div>
+</template>

@@ -1,5 +1,16 @@
 <template>
-   <require from = './converters' ></require>
-   <!--<input id= "someId" type= "text" value.bind= "Text & oneTime" />-->
-   <p>${CurrentDate}</p>
+   <!--<require from= "./components/value-edit-datepicker.html"></require>
+   <require from= "./components/value-edit-text.html"></require>-->
+   <p>Hello!!</p>
+   <div>
+      <compose 
+         view-model="./components/predicate" 
+         model.bind="getPredicate()"></compose>
+   </div>
+   <!--<div>
+      <compose 
+         view-model="./components/data-field-selector" 
+         model.bind="getDataFieldOptions()"
+         view.bind= "getDataFieldSelectorView()"></compose>
+   </div>-->
 </template>

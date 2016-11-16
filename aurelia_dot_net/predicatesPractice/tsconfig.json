@@ -1,7 +1,14 @@
 {
-    "compilerOptions": {
+     "compilerOptions": {
         "target": "es5",
         "module": "commonjs",
-        "sourceMap": true
-    }
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "outFile": "../../built/local/tsc.js"
+    },
+    "include": [
+        "src/**/*"
+    ]
 }

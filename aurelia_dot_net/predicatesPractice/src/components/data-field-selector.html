@@ -1,0 +1,16 @@
+<!--works with DataFieldOptions-->
+<template>
+   <select class=  "data-field-select" style="width:300px" value.bind = "selectedValue" >
+      <optgroup label= "Recently Used">
+         <option repeat.for= "option of getRecentOptions()" model.bind="option">
+            ${option.fieldName}
+         </option>
+      </optgroup>
+      <optgroup label= "All Data Fields (by category)">
+         <option repeat.for= "option of getAllOptions()" model.bind="option">
+            ${option.fieldName}
+         </option>
+      </optgroup>
+   </select>
+   <h1>${selectedValue.fieldName} ${selectedValue.dataType}</h1> 
+</template>

@@ -1,0 +1,16 @@
+<template>
+   <div id="container">
+      <div class= "data-field">
+         ${rule.dataField.fieldName}
+      </div>
+      <div id= "condition">
+         ${rule.comparer.name}
+      </div>
+      <div id= "filter">
+         <compose 
+            view-model="./filters-container" 
+            model.bind="rule.filters"
+            view.bind= "getFilterContainerview()"></compose>
+      </div>
+   </div>
+</template>
