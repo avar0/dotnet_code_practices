@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7,40 +8,39 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-define(["require", "exports", 'aurelia-dependency-injection', 'aurelia-cli'], function (require, exports, aurelia_dependency_injection_1, aurelia_cli_1) {
-    "use strict";
-    var ElementGenerator = (function () {
-        function ElementGenerator(project, options, ui) {
-            this.project = project;
-            this.options = options;
-            this.ui = ui;
-        }
-        ElementGenerator.prototype.execute = function () {
-            var _this = this;
-            return this.ui
-                .ensureAnswer(this.options.args[0], 'What would you like to call the custom element?')
-                .then(function (name) {
-                var fileName = _this.project.makeFileName(name);
-                var className = _this.project.makeClassName(name);
-                _this.project.elements.add(aurelia_cli_1.ProjectItem.text(fileName + ".ts", _this.generateJSSource(className)), aurelia_cli_1.ProjectItem.text(fileName + ".html", _this.generateHTMLSource(className)));
-                return _this.project.commitChanges()
-                    .then(function () { return _this.ui.log("Created " + fileName + "."); });
-            });
-        };
-        ElementGenerator.prototype.generateJSSource = function (className) {
-            return "import {bindable} from 'aurelia-framework';\n\nexport class " + className + " {\n  @bindable value;\n\n  valueChanged(newValue, oldValue) {\n\n  }\n}\n\n";
-        };
-        ElementGenerator.prototype.generateHTMLSource = function (className) {
-            return "<template>\n  <h1>${value}</h1>\n</template>";
-        };
-        ElementGenerator = __decorate([
-            aurelia_dependency_injection_1.inject(aurelia_cli_1.Project, aurelia_cli_1.CLIOptions, aurelia_cli_1.UI), 
-            __metadata('design:paramtypes', [(typeof (_a = typeof aurelia_cli_1.Project !== 'undefined' && aurelia_cli_1.Project) === 'function' && _a) || Object, (typeof (_b = typeof aurelia_cli_1.CLIOptions !== 'undefined' && aurelia_cli_1.CLIOptions) === 'function' && _b) || Object, (typeof (_c = typeof aurelia_cli_1.UI !== 'undefined' && aurelia_cli_1.UI) === 'function' && _c) || Object])
-        ], ElementGenerator);
-        return ElementGenerator;
-        var _a, _b, _c;
-    }());
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.default = ElementGenerator;
-});
+var aurelia_dependency_injection_1 = require('aurelia-dependency-injection');
+var aurelia_cli_1 = require('aurelia-cli');
+var ElementGenerator = (function () {
+    function ElementGenerator(project, options, ui) {
+        this.project = project;
+        this.options = options;
+        this.ui = ui;
+    }
+    ElementGenerator.prototype.execute = function () {
+        var _this = this;
+        return this.ui
+            .ensureAnswer(this.options.args[0], 'What would you like to call the custom element?')
+            .then(function (name) {
+            var fileName = _this.project.makeFileName(name);
+            var className = _this.project.makeClassName(name);
+            _this.project.elements.add(aurelia_cli_1.ProjectItem.text(fileName + ".ts", _this.generateJSSource(className)), aurelia_cli_1.ProjectItem.text(fileName + ".html", _this.generateHTMLSource(className)));
+            return _this.project.commitChanges()
+                .then(function () { return _this.ui.log("Created " + fileName + "."); });
+        });
+    };
+    ElementGenerator.prototype.generateJSSource = function (className) {
+        return "import {bindable} from 'aurelia-framework';\n\nexport class " + className + " {\n  @bindable value;\n\n  valueChanged(newValue, oldValue) {\n\n  }\n}\n\n";
+    };
+    ElementGenerator.prototype.generateHTMLSource = function (className) {
+        return "<template>\n  <h1>${value}</h1>\n</template>";
+    };
+    ElementGenerator = __decorate([
+        aurelia_dependency_injection_1.inject(aurelia_cli_1.Project, aurelia_cli_1.CLIOptions, aurelia_cli_1.UI), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof aurelia_cli_1.Project !== 'undefined' && aurelia_cli_1.Project) === 'function' && _a) || Object, (typeof (_b = typeof aurelia_cli_1.CLIOptions !== 'undefined' && aurelia_cli_1.CLIOptions) === 'function' && _b) || Object, (typeof (_c = typeof aurelia_cli_1.UI !== 'undefined' && aurelia_cli_1.UI) === 'function' && _c) || Object])
+    ], ElementGenerator);
+    return ElementGenerator;
+    var _a, _b, _c;
+}());
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = ElementGenerator;
 //# sourceMappingURL=element.js.map

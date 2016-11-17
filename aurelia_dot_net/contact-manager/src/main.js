@@ -1,23 +1,22 @@
-define(["require", "exports", './environment'], function (require, exports, environment_1) {
-    "use strict";
-    Promise.config({
-        longStackTraces: environment_1.default.debug,
-        warnings: {
-            wForgottenReturn: false
-        }
-    });
-    function configure(aurelia) {
-        aurelia.use
-            .standardConfiguration()
-            .feature('resources');
-        if (environment_1.default.debug) {
-            aurelia.use.developmentLogging();
-        }
-        if (environment_1.default.testing) {
-            aurelia.use.plugin('aurelia-testing');
-        }
-        aurelia.start().then(function () { return aurelia.setRoot(); });
+"use strict";
+var environment_1 = require('./environment');
+Promise.config({
+    longStackTraces: environment_1.default.debug,
+    warnings: {
+        wForgottenReturn: false
     }
-    exports.configure = configure;
 });
+function configure(aurelia) {
+    aurelia.use
+        .standardConfiguration()
+        .feature('resources');
+    if (environment_1.default.debug) {
+        aurelia.use.developmentLogging();
+    }
+    if (environment_1.default.testing) {
+        aurelia.use.plugin('aurelia-testing');
+    }
+    aurelia.start().then(function () { return aurelia.setRoot(); });
+}
+exports.configure = configure;
 //# sourceMappingURL=main.js.map

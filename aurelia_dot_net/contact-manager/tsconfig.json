@@ -3,7 +3,7 @@
   "compilerOptions": {
     "sourceMap": true,
     "target": "es5",
-    "module": "amd",
+    "module": "commonjs",
     "declaration": false,
     "noImplicitAny": false,
     "removeComments": true,
